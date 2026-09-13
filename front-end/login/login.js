@@ -59,6 +59,6 @@ document.querySelector('form').addEventListener('submit', async function(event) 
 
     } catch (error) {
         console.error("Erro na comunicação:", error);
-        alert("Não foi possível conectar ao servidor. Verifique se o Back-End está ligado!");
+        alert("Não foi possível conectar ao servidor. Verifique se o servidor está ligado!");
     }
 });
