@@ -7,17 +7,21 @@ conexao = sqlite3.connect('usuarios.db')
 cursor = conexao.cursor()
 
 # Cria a tabela de usuários se ela ainda não existir
-cursor.execute('''
-CREATE TABLE IF NOT EXISTS usuarios (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    nome TEXT NOT NULL,
-    email TEXT NOT NULL UNIQUE,
-    senha TEXT NOT NULL
-)
-''')
+def criar_banco():
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS usuarios (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        nome TEXT NOT NULL,
+        email TEXT NOT NULL UNIQUE,
+        senha TEXT NOT NULL
+    )
+    ''')
 
-# Salva as alterações e fecha a conexão
-conexao.commit()
-conexao.close()
+    # Salva as alterações e fecha a conexão
+    conexao.commit()
+    conexao.close()
 
-print("Banco de dados e tabela 'usuarios' criados com sucesso!")
+    print("Banco de dados e tabela 'usuarios' criados com sucesso!")
+
+# Executa a função para garantir que a tabela exista antes do servidor receber acessos
+criar_banco()
