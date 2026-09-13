@@ -93,7 +93,9 @@ input[type="checkbox"] {
 
 /* Estilização dos Botões */
 button {
-    width: 100%;
+    display: block;         /* Transforma o botão em um bloco para aceitar margens laterais */
+    margin: 10px auto 0;    /* 10px em cima, automático nas laterais, 0 embaixo */
+    width: 50%;
     padding: 12px;
     background-color: #1a73e8;
     color: white;
@@ -103,7 +105,6 @@ button {
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.2s;
-    margin-top: 10px;
 }
 
 /* Efeito de passar o mouse por cima do botão (Hover) */
