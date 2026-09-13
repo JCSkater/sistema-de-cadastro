@@ -22,6 +22,3 @@ def criar_banco():
     conexao.close()
 
     print("Banco de dados e tabela 'usuarios' criados com sucesso!")
-
-# Executa a função para garantir que a tabela exista antes do servidor receber acessos
-criar_banco()
