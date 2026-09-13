@@ -46,7 +46,7 @@ document.querySelector('#form-cadastro').addEventListener('submit', async functi
 
     try {
         // O fetch envia os dados para o endpoint de cadastro no Python
-        const resposta = await fetch('http://localhost:8000/cadastro', {
+        const resposta = await fetch('https://sistema-de-cadastro-iuj1.onrender.com/cadastro', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -60,7 +60,7 @@ document.querySelector('#form-cadastro').addEventListener('submit', async functi
         if (resposta.ok) {
             // Se o Python respondeu com sucesso (código 201)
             alert(resultado.mensagem);
-            window.location.href = "../login/login.html"; // Redireciona para a tela de login
+            window.location.href = "/login/login.html"; // Redireciona para a tela de login
         } else {
             // Se o Python retornou algum erro validado (Ex: e-mail já existe)
             // Lendo diretamente a chave 'mensagem' enviada pelo app.py

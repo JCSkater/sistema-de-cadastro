@@ -35,7 +35,7 @@ document.querySelector('form').addEventListener('submit', async function(event) 
 
     try {
         // O fetch envia os dados para o endpoint de login no Python
-        const resposta = await fetch('http://localhost:8000/login', {
+        const resposta = await fetch('https://sistema-de-cadastro-iuj1.onrender.com/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
