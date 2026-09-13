@@ -1,0 +1,136 @@
+/* Configurações Gerais (Reseta o padrão do navegador e define a fonte) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilo do Fundo da Página */
+body {
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Cartão Centralizado (Container para o conteúdo) */
+div, form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Ajuste específico para tirar a borda dupla quando o form está dentro da div */
+div form {
+    box-shadow: none;
+    padding: 20px 0 0 0;
+}
+
+/* Títulos */
+h1, h2 {
+    color: #1a73e8;
+    margin-bottom: 15px;
+}
+
+/* Parágrafos e Textos secundários */
+p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Blocos que envolvem cada campo do formulário */
+div > div {
+    box-shadow: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+/* Rótulos dos campos (Labels) */
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #444;
+}
+
+/* Campos de Entrada de Texto (Inputs) */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+/* Efeito de clique no Input */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #1a73e8;
+    outline: none;
+}
+
+/* Ajuste específico para a caixinha de Termos (Checkbox) */
+input[type="checkbox"] {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+/* Estilização dos Botões */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 10px;
+}
+
+/* Efeito de passar o mouse por cima do botão (Hover) */
+button:hover {
+    background-color: #155cb4;
+}
+
+/* Links */
+a {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Barra de Navegação da Página Inicial (Atualizado para Coluna) */
+nav {
+    display: flex;
+    flex-direction: column; /* Faz os elementos ficarem um abaixo do outro */
+    gap: 15px;              /* Mantém um espaçamento vertical de 15px entre eles */
+    width: 100%;
+    margin-top: 10px;
+}
+
+nav a {
+    flex: none; /* Remove a distribuição horizontal antiga */
+}

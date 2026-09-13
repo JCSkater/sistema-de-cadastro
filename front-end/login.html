@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Página de Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div>
+        <h2>Área de Acesso</h2>
+        
+        <form>
+            <!-- Campo de E-mail Sanitizado -->
+            <div>
+                <label for="email">E-mail:</label>
+                <!-- maxlength impede ataques de estouro de búfer enviando textos gigantescos -->
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    placeholder="seu@email.com" 
+                    maxlength="60"
+                    required
+                >
+            </div>
+            
+            <br>
+
+            <!-- Campo de Senha -->
+            <div>
+                <label for="senha">Senha:</label>
+                <input 
+                    type="password" 
+                    id="senha" 
+                    name="senha" 
+                    placeholder="Digite sua senha" 
+                    maxlength="32"
+                    required
+                >
+            </div>
+
+            <br>
+
+            <button type="submit">Entrar</button>
+        </form>
+
+        <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se aqui</a></p>
+    </div>
+
+    <!-- Conectado ao seu login.js higienizado -->
+    <script src="login.js"></script>
+</body>
+</html>

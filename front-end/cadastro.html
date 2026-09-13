@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Criar Nova Conta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div>
+        <h2>Crie sua Conta</h2>
+        
+        <form id="form-cadastro">
+            <!-- Campo de Nome Completo -->
+            <div>
+                <label for="nome">Nome Completo:</label>
+                <!-- O pattern bloqueia símbolos (<, >, /, ;, etc.) e aceita apenas letras e espaços -->
+                <input 
+                    type="text" 
+                    id="nome" 
+                    name="nome" 
+                    placeholder="Digite seu nome" 
+                    pattern="^[A-Za-zÀ-ÖØ-öø-ÿ\s]{3,50}$"
+                    title="O nome deve conter apenas letras e espaços (entre 3 e 50 caracteres)."
+                    maxlength="50"
+                    required
+                >
+            </div>
+            
+            <br>
+
+            <!-- Campo de E-mail -->
+            <div>
+                <label for="email">E-mail:</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    placeholder="seu@email.com" 
+                    maxlength="60"
+                    required
+                >
+            </div>
+            
+            <br>
+
+            <!-- Campo de Senha -->
+            <div>
+                <label for="senha">Senha:</label>
+                <input 
+                    type="password" 
+                    id="senha" 
+                    name="senha" 
+                    placeholder="Crie uma senha forte" 
+                    minlength="6"
+                    maxlength="32"
+                    required
+                >
+            </div>
+
+            <br>
+
+            <!-- Confirmação de Senha -->
+            <div>
+                <label for="confirma-senha">Confirmar Senha:</label>
+                <input 
+                    type="password" 
+                    id="confirma-senha" 
+                    name="confirma_senha" 
+                    placeholder="Digite a senha novamente" 
+                    minlength="6"
+                    maxlength="32"
+                    required
+                >
+            </div>
+
+            <br>
+
+            <!-- Caixa de Seleção (Checkbox) -->
+            <div>
+                <input type="checkbox" id="termos" name="termos" required>
+                <label for="termos">Eu aceito os termos e condições</label>
+            </div>
+
+            <br>
+
+            <button type="submit">Finalizar Cadastro</button>
+        </form>
+
+        <p>Já tem uma conta? <a href="login.html">Faça login aqui</a></p>
+    </div>
+
+    <!-- Conectado ao cadastro.js -->
+    <script src="cadastro.js"></script>
+</body>
+</html>
