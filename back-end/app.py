@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from criar_banco import criar_banco  # Importa a função para criar o banco de dados
 import html  # Biblioteca nativa para sanitizar HTML/XSS
 import re    # Biblioteca nativa para expressões regulares (Regex)
 import sqlite3 # Biblioteca nativa para o banco de dados
@@ -13,6 +14,9 @@ CORS(app)
 EMAIL_REGEX = r"^[\w\.-]+@[\w\.-]+\.\w+$"
 # Expressão regular para validar o nome (apenas letras e espaços, de 3 a 50 caracteres)
 NOME_REGEX = r"^[A-Za-zÀ-ÖØ-öø-ÿ\s]{3,50}$"
+
+# Cria o banco de dados e a tabela se não existirem
+criar_banco()
 
 # Nome do arquivo do banco de dados
 DB_NAME = 'usuarios.db'
