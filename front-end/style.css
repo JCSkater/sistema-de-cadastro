@@ -1,4 +1,7 @@
-/* Configurações Gerais (Reseta o padrão do navegador e define a fonte) */
+/* ==========================================
+   CONFIGURAÇÕES GERAIS E BASE (Foco: Mobile)
+   ========================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +9,6 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Estilo do Fundo da Página */
 body {
     background-color: #f0f2f5;
     color: #333;
@@ -15,40 +17,37 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 20px;
+    padding: 15px; /* Reduzido levemente para telas bem pequenas */
 }
 
-/* Cartão Centralizado (Container para o conteúdo) */
+/* Cartão Centralizado - No mobile ele ocupa quase toda a largura */
 div, form {
     background-color: #ffffff;
-    padding: 30px;
+    padding: 20px; /* Padding menor no mobile para ganhar espaço */
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;
+    max-width: 100%; /* Ocupa o máximo no mobile */
     text-align: center;
 }
 
-/* Ajuste específico para tirar a borda dupla quando o form está dentro da div */
 div form {
     box-shadow: none;
-    padding: 20px 0 0 0;
+    padding: 15px 0 0 0;
 }
 
-/* Títulos */
 h1, h2 {
     color: #1a73e8;
     margin-bottom: 15px;
+    font-size: 1.5rem; /* Usando rem para melhor escalabilidade de fontes */
 }
 
-/* Parágrafos e Textos secundários */
 p {
     margin-bottom: 20px;
     font-size: 14px;
     color: #666;
 }
 
-/* Blocos que envolvem cada campo do formulário */
 div > div {
     box-shadow: none;
     padding: 0;
@@ -56,7 +55,6 @@ div > div {
     margin-bottom: 15px;
 }
 
-/* Rótulos dos campos (Labels) */
 label {
     display: block;
     margin-bottom: 6px;
@@ -65,19 +63,17 @@ label {
     color: #444;
 }
 
-/* Campos de Entrada de Texto (Inputs) */
 input[type="text"],
 input[type="email"],
 input[type="password"] {
     width: 100%;
-    padding: 10px 12px;
+    padding: 12px; /* Aumentado para facilitar o toque no celular (mínimo 44px de área) */
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 16px; /* Tamanho 16px evita o zoom automático indesejado no iOS */
     transition: border-color 0.3s;
 }
 
-/* Efeito de clique no Input */
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus {
@@ -85,18 +81,17 @@ input[type="password"]:focus {
     outline: none;
 }
 
-/* Ajuste específico para a caixinha de Termos (Checkbox) */
 input[type="checkbox"] {
     margin-right: 8px;
     cursor: pointer;
 }
 
-/* Estilização dos Botões */
+/* Botão no mobile ocupa 100% para facilitar o clique */
 button {
-    display: block;         /* Transforma o botão em um bloco para aceitar margens laterais */
-    margin: 10px auto 0;    /* 10px em cima, automático nas laterais, 0 embaixo */
-    width: 50%;
-    padding: 12px;
+    display: block;
+    margin: 15px 0 0 0;
+    width: 100%; 
+    padding: 14px; /* Mais alto para melhor usabilidade touch */
     background-color: #1a73e8;
     color: white;
     border: none;
@@ -107,12 +102,10 @@ button {
     transition: background-color 0.2s;
 }
 
-/* Efeito de passar o mouse por cima do botão (Hover) */
 button:hover {
     background-color: #155cb4;
 }
 
-/* Links */
 a {
     color: #1a73e8;
     text-decoration: none;
@@ -123,15 +116,50 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Barra de Navegação da Página Inicial (Atualizado para Coluna) */
+/* Navegação Mobile (Fila Única/Coluna) */
 nav {
     display: flex;
-    flex-direction: column; /* Faz os elementos ficarem um abaixo do outro */
-    gap: 15px;              /* Mantém um espaçamento vertical de 15px entre eles */
+    flex-direction: column;
+    gap: 12px;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 nav a {
-    flex: none; /* Remove a distribuição horizontal antiga */
+    flex: none;
+}
+
+
+/* ==========================================
+   MEDIA QUERIES (Adaptação para telas maiores)
+   ========================================== */
+
+/* 💻 Tablets e Desktops (A partir de 480px / 600px) */
+@media (min-width: 480px) {
+    body {
+        padding: 20px;
+    }
+
+    div, form {
+        padding: 30px;
+        max-width: 400px; /* Limita o tamanho do cartão em telas grandes */
+    }
+
+    h1, h2 {
+        font-size: 1.8rem;
+    }
+
+    /* O botão volta a ter o comportamento original de desktop */
+    button {
+        width: 50%;
+        margin: 10px auto 0;
+        padding: 12px;
+    }
+
+    /* A navegação muda para linha se preferir em telas maiores */
+    nav {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
 }
