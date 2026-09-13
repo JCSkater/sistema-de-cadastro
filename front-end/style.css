@@ -95,7 +95,7 @@ input[type="checkbox"] {
 button {
     display: block;         /* Transforma o botão em um bloco para aceitar margens laterais */
     margin: 10px auto 0;    /* 10px em cima, automático nas laterais, 0 embaixo */
-    width: 50%;
+    width: 100%;
     padding: 12px;
     background-color: #1a73e8;
     color: white;
