@@ -60,9 +60,10 @@ document.querySelector('#form-cadastro').addEventListener('submit', async functi
         if (resposta.ok) {
             // Se o Python respondeu com sucesso (código 201)
             alert(resultado.mensagem);
-            window.location.href = "login.html"; // Redireciona para a tela de login
+            window.location.href = "../login/login.html"; // Redireciona para a tela de login
         } else {
-            // Se o Python retornou algum erro
+            // Se o Python retornou algum erro validado (Ex: e-mail já existe)
+            // Lendo diretamente a chave 'mensagem' enviada pelo app.py
             alert("Erro no servidor: " + resultado.mensagem);
         }
 

@@ -1,0 +1,28 @@
+# --- BANCO DE DADOS (SQLite) ---
+# Ignora o banco de dados que você já tem e qualquer outro arquivo SQLite
+usuarios.db
+*.db
+*.sqlite
+*.sqlite3
+
+# --- FLASK & PYTHON ---
+# Ignora os arquivos compilados do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+limpar.py
+
+# Ignora pastas de ambiente virtual (onde ficam as bibliotecas instaladas)
+venv/
+.venv/
+env/
+
+# Ignora arquivos de variáveis de ambiente (onde ficam senhas e chaves secretas)
+.env
+.flaskenv
+
+# --- EDITORES DE CÓDIGO ---
+# Ignora configurações locais do VS Code ou PyCharm
+.vscode/
+.idea/
