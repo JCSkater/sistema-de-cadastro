@@ -50,8 +50,8 @@ document.querySelector('form').addEventListener('submit', async function(event) 
             // Se o Python respondeu com sucesso (código 200 - Login autorizado!)
             alert(resultado.mensagem);
             
-            // Aqui você pode redirecionar o usuário para a página principal do seu sistema pós-login
-            // window.location.href = "dashboard.html"; 
+            // REDIRECIONAMENTO ATUALIZADO: Envia o usuário para a página do projeto Android
+            window.location.href = "https://jcskater.github.io/projeto-android/"; 
         } else {
             // Se o Python retornou erro (código 401 - Incorreto ou 400 - Inválido)
             alert("Erro ao entrar: " + resultado.mensagem);
