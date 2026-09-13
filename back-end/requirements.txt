@@ -1,0 +1,4 @@
+Flask
+flask-bcrypt
+flask-cors
+gunicorn

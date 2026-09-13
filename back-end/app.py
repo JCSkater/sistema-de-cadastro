@@ -4,6 +4,7 @@ import html  # Biblioteca nativa para sanitizar HTML/XSS
 import re    # Biblioteca nativa para expressões regulares (Regex)
 import sqlite3 # Biblioteca nativa para o banco de dados
 import bcrypt # Biblioteca para criptografia de senhas (Hashing)
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -135,4 +136,6 @@ def cadastro_endpoint():
         return jsonify({"status": "erro", "mensagem": "Ocorreu um erro interno ao processar o seu cadastro."}), 500
 
 if __name__ == "__main__":
-    app.run(debug=False, port=8000)
+     # O Render injeta a porta correta na variável de ambiente PORT
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
