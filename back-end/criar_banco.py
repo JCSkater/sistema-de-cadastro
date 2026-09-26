@@ -1,13 +1,13 @@
 import sqlite3
 
-# Conecta ao banco de dados (se o arquivo não existir, ele será criado automaticamente)
-conexao = sqlite3.connect('usuarios.db')
-
-# O cursor é o que nos permite executar comandos SQL no banco
-cursor = conexao.cursor()
-
 # Cria a tabela de usuários se ela ainda não existir
 def criar_banco():
+    # Conecta ao banco de dados (se o arquivo não existir, ele será criado automaticamente)
+    conexao = sqlite3.connect('usuarios.db')
+
+    # O cursor é o que nos permite executar comandos SQL no banco
+    cursor = conexao.cursor()
+    
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS usuarios (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
